@@ -28,6 +28,17 @@
                     <%= attachment_image_tag recipe.user, :profile_image, fallback: "staff2.jpg", class: "profile_image" %>
                   </figure>
                 </div>
+                <% if current_user.already_favorited?(recipe) %>
+                  <%= link_to recipe_favorites_path(recipe), method: :delete do %> 
+                    <i class="fas fa-heart"></i>
+                  <% end %> 
+                  <%= recipe.favorites.count %>
+                <% else %> 
+                  <%= link_to recipe_favorites_path(recipe), method: :post do %>
+                    <i class="far fa-heart"></i>
+                  <% end %>
+                  <%= recipe.favorites.count %>
+                <% end %>
                 <div class="media-content">
                   <div class="title"><%=link_to recipe.user.name, user_path(recipe.user) %></div>
                 </div>
@@ -38,7 +49,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> 
       <% end %>
     </div>
   </div>
