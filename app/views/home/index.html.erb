@@ -1,27 +1,185 @@
-<section class="section">
-  <article class="media">
-    <div class="media-content">
-      <div class="content has-text-centered">
-        <p>
-          <strong class="is-size-1" style="font-family: cursive;">Bon vivant</strong>
-        </p>
-      </div>
-      <div class="columns is-centered">
-        <div class="column is-5">
-          <br>
-          <%= link_to "ログイン", new_user_session_path, class: "button is-warning is-fullwidth" %>
-          <br>
-          <%= link_to "新規登録", new_user_registration_path, class: "button is-warning is-fullwidth" %>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Bon vivant</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" 
+     integrity="sha256-UzFD2WYH2U1dQpKDjjZK72VtPeWP50NoJjd26rnAdUI=" crossorigin="anonymous" />
+    <link
+      href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheets" href="style.css" />
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>  
+  </head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-dark py-3 sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <h2 class="pt-2 text-white">Bon Vivant</h2>
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/recipes">Recipes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/recipes/new">New pecipe</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/users/show">My page</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/usres/index">Contributor</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Follow</a>
+          </li>
+        </ul>
+      <a class="btn btn-primary ms-3" href="/users/sign_up">登録</a>
+    </div>
+  </nav>
+  <div class="hero vh-100 d-flex align-items-center" id="home">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-7 mx-auto text-center">
+            <h1 class="display-4 text-white">ログイン画面</h1>
+            <p class="text-white my-3">
+
+            </p>
+            <a href="#" class="btn btn-primary me-2">チャンネル登録</a>
+            <a href="#" class="btn btn-outline-light">LINE公式</a>
+          </div>
         </div>
       </div>
     </div>
-  </article>
-  <br>
-  <div class="columns is-centered">
-    <div class="column">
-      <figure>
-        <div class="main-image"></div>
-      </figure>
-    </div>
-  </div>
-</section>
+
+        <div class="hero vh-100 d-flex align-items-center" id="home">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-9 mx-auto text-center">
+                <h1 class="display-4 text-white">~食をより楽しく~</h1>
+                <p class="text-white my-3">
+                  料理を作る時間を1日の楽しみに。
+                  自分が作った料理をWeb上で公開してコミュニケーションを
+                  取る事ができるサイトです。
+                </p> 
+                  <div class="row g-3"> 
+                    <div class="col-lg-4 col-sm-6"> 
+                      <div class="project">
+                        <img src="/assets/sample1.png" alt="これは画像です">
+                        <div class="overlay">
+                          <div>
+                            <h4 class="text-white">Project Title</h4>
+                            <h6 class="text-white">Website Design</h6>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                      <div class="project">
+                        <img src="/assets/sample2.jpeg" alt="これは画像です">
+                        <div class="overlay">
+                          <div>
+                            <h4 class="text-white">Project Title</h4>
+                            <h6 class="text-white">Website Design</h6>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                      <div class="project">
+                        <img src="/assets/sample3.jpeg" alt="これは画像です">
+                        <div class="overlay">
+                          <div>
+                            <h4 class="text-white">Project Title</h4>
+                            <h6 class="text-white">Website Design</h6>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Services section -->
+        <section id="services">
+          <div class="container">
+            <div class="row mb-4">
+              <div class="col-md-8 mx-auto text-center">
+                <h6 class="text-primary">Service</h6>
+                <h1>Bon vivant . Service</h1>
+              </div>
+            </div>
+
+            <div class="row g-4">
+              <div class="col-lg-4 col-sm-6">
+                <div class="service card-effect">
+                  <div class="iconbox">
+                    <i class="bx bxs-comment-detail"></i>
+                  </div>
+                  <h5 class="mt-4 mb-2">レシピ投稿</h5>
+                  <p>
+                    自身のレシピを投稿する事ができます。
+                    写真を載せることも可能です。
+                  </p>
+                </div>
+              </div>
+              <div class="col-lg-4 col-sm-6">
+                <div class="service card-effect">
+                  <div class="iconbox">
+                    <i class="bx bx-dna"></i>
+                  </div>
+                  <h5 class="mt-4 mb-2">いいね機能</h5>
+                  <p>
+                    あなたの気に入ったレシピをいいねすることができます。
+                  </p>
+                </div>
+              </div>
+              <div class="col-lg-4 col-sm-6">
+                <div class="service card-effect">
+                  <div class="iconbox">
+                    <i class="bx bx-border-all"></i>
+                  </div>
+                  <h5 class="mt-4 mb-2">コメント機能</h5>
+                  <p>
+                    あなたの気に入ったレシピに対してコメントをする事ができます。
+                  </p>
+                </div>
+            </div>
+          </div>
+        </section>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+      crossorigin="anonymous"></script>
+
+  </body>
+</html>

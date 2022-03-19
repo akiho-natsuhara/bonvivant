@@ -1,10 +1,7 @@
-// Place all the styles related to the home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
-
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;700;900&family=Sora:wght@400;700&display=swap");
+
 :root {
-  --primary: orange;
+  --primary: #0d6efd;
   --dark: #21252f;
   --body: #888;
   /* --orange: rgb(221, 155, 94); */
@@ -33,6 +30,9 @@ a {
   text-decoration: none;
 }
 
+img {
+  width: 100%;
+}
 
 .navbar {
   box-shadow: var(--box-shadow);
@@ -58,7 +58,6 @@ a {
 }
 
 .hero {
-  background-image: url("sample1.png");
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
@@ -236,4 +235,3 @@ form .form-control {
 .footer-top a:hover {
   color: #fff;
 }
-
