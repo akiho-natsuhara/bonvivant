@@ -22,56 +22,15 @@
   </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-dark py-3 sticky-top">
-    <div class="container">
-      <a class="navbar-brand" href="#">
-        <h2 class="pt-2 text-white">Bon Vivant</h2>
-      </a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarNav"
-        aria-controls="navbarNav"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="/">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/recipes">Recipes</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/recipes/new">New pecipe</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/users/show">My page</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/usres/index">Contributor</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Follow</a>
-          </li>
-        </ul>
-      <a class="btn btn-primary ms-3" href="/users/sign_up">登録</a>
-    </div>
-  </nav>
   <div class="hero vh-100 d-flex align-items-center" id="home">
       <div class="container">
         <div class="row">
           <div class="col-lg-7 mx-auto text-center">
-            <h1 class="display-4 text-white">ログイン画面</h1>
-            <p class="text-white my-3">
-
-            </p>
-            <a href="#" class="btn btn-primary me-2">チャンネル登録</a>
-            <a href="#" class="btn btn-outline-light">LINE公式</a>
+           <div class="top_title">
+             <h1 class="display-4 text-white">Welcome to <br> Bon vivant!</h1>
+             <a href="/users/sign_up" class="btn btn-primary me-2">新規登録</a>
+             <a href="/users/sign_in" class="btn btn-primary me-2">ログイン</a>
+           </div>
           </div>
         </div>
       </div>
@@ -90,11 +49,11 @@
                   <div class="row g-3"> 
                     <div class="col-lg-4 col-sm-6"> 
                       <div class="project">
-                        <img src="/assets/sample1.png" alt="これは画像です">
+                        <img src="/assets/sample1.png" alt="これは画像です" >
                         <div class="overlay">
                           <div>
-                            <h4 class="text-white">Project Title</h4>
-                            <h6 class="text-white">Website Design</h6>
+                            <h4 class="text-white">Sample</h4>
+                            <h6 class="text-white">Sample image</h6>
                           </div>
                         </div>
                       </div>
@@ -104,8 +63,8 @@
                         <img src="/assets/sample2.jpeg" alt="これは画像です">
                         <div class="overlay">
                           <div>
-                            <h4 class="text-white">Project Title</h4>
-                            <h6 class="text-white">Website Design</h6>
+                            <h4 class="text-white">Smple</h4>
+                            <h6 class="text-white">Sample image</h6>
                           </div>
                         </div>
                       </div>
@@ -115,8 +74,8 @@
                         <img src="/assets/sample3.jpeg" alt="これは画像です">
                         <div class="overlay">
                           <div>
-                            <h4 class="text-white">Project Title</h4>
-                            <h6 class="text-white">Website Design</h6>
+                            <h4 class="text-white">Sample</h4>
+                            <h6 class="text-white">Sample image</h6>
                           </div>
                         </div>
                       </div>
@@ -154,11 +113,22 @@
               <div class="col-lg-4 col-sm-6">
                 <div class="service card-effect">
                   <div class="iconbox">
-                    <i class="bx bx-dna"></i>
+                    <i class="bx bx-border-all"></i>
                   </div>
-                  <h5 class="mt-4 mb-2">いいね機能</h5>
+                  <h5 class="mt-4 mb-2">レシピ更新</h5>
                   <p>
-                    あなたの気に入ったレシピをいいねすることができます。
+                    レシピを更新すると常に最新の更新日が表示され日時を確認することができます。
+                  </p>
+                </div>
+              </div>
+              <div class="col-lg-4 col-sm-6">
+                <div class="service card-effect">
+                  <div class="iconbox">
+                    <i class="bx bx-border-all"></i>
+                  </div>
+                  <h5 class="mt-4 mb-2">レシピ編集</h5>
+                  <p>
+                    あなた自身のレシピはいつでも編集・削除する事ができます。
                   </p>
                 </div>
               </div>
@@ -172,7 +142,29 @@
                     あなたの気に入ったレシピに対してコメントをする事ができます。
                   </p>
                 </div>
-            </div>
+              </div>
+              <div class="col-lg-4 col-sm-6">
+                <div class="service card-effect">
+                  <div class="iconbox">
+                    <i class="bx bx-dna"></i>
+                  </div>
+                  <h5 class="mt-4 mb-2">いいね機能</h5>
+                  <p>
+                    あなたの気に入ったレシピをいいねすることができます。
+                  </p>
+                </div>
+              </div>
+              <div class="col-lg-4 col-sm-6">
+                <div class="service card-effect">
+                  <div class="iconbox">
+                    <i class="bx bx-border-all"></i>
+                  </div>
+                  <h5 class="mt-4 mb-2">フォロー機能</h5>
+                  <p>
+                    あなたが気になった投稿者をいつでもフォローする事ができます。
+                  </p>
+                </div>
+              </div>
           </div>
         </section>
 

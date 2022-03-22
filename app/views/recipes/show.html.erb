@@ -1,20 +1,10 @@
-<section class="hero is-success">
-  <div class="hero-body">
-    <div class="container">
-      <h1 class="title">
-        レシピ詳細
-      </h1>
-    </div>
-  </div>
-</section>
-
 <section class="section">
   <div class="container">
     <div class="columns is-centered">
       <div class="column is-7">
         <div class="card">
           <div class="card-image">
-            <figure class="image is-4by3">
+            <figure class="recipe_show_image">
               <%= image_tag(@recipe.image) %>
             </figure>
           </div>
@@ -34,15 +24,15 @@
                 </tr>
               </table>
               <% if current_user.already_favorited?(@recipe) %>
-                <%= link_to recipe_favorites_path(@recipe), method: :delete do %>
+                <%= button_to  recipe_favorites_path(@recipe), {method: :delete, class: "favoirte_button"} do %> 
                   <i class="fas fa-heart"></i>
-                <% end %>
-                <%= @recipe.favorites.count %>
-              <% else %>
-                <%= link_to recipe_favorites_path(@recipe), method: :post do %>
+                  <%= @recipe.favorites.count %>
+                <% end %> 
+              <% else %> 
+                <%= button_to recipe_favorites_path(@recipe), {method: :post, class: "favorite_button"} do %>
                   <i class="far fa-heart"></i>
+                  <%= @recipe.favorites.count %>
                 <% end %>
-                <%= @recipe.favorites.count %>　
               <% end %>
 
 

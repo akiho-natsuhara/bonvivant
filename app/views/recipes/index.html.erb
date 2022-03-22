@@ -1,13 +1,3 @@
-<section class="hero is-success">
-  <div class="hero-body">
-    <div class="container">
-      <h1 class="title">
-        レシピ一覧
-      </h1>
-    </div>
-  </div>
-</section>
-
 <section class="section">
   <div class="container">
     <div class="columns is-multiline">
@@ -15,7 +5,7 @@
         <div class="column is-4">
           <div class="card">
             <div class="card-image">
-              <figure class="image is-4by3">
+              <figure class="recipe_card_image">
                 <%= link_to recipe_path(recipe) do %>
                   <%= image_tag(recipe.image) %>
                 <% end %>
@@ -24,7 +14,7 @@
             <div class="card-content">
               <div class="media">
                 <div class="media-left">
-                  <figure class="image is-48x48">
+                  <figure class="recipe_image">
                     <%= attachment_image_tag recipe.user, :profile_image, fallback: "no.image.png", class: "profile_image" %>
                   </figure>
                 </div>
@@ -34,15 +24,15 @@
               </div>
                 <% if user_signed_in? %>
                   <% if current_user.already_favorited?(recipe) %>
-                    <%= link_to recipe_favorites_path(recipe), method: :delete do %> 
+                    <%= button_to  recipe_favorites_path(recipe), {method: :delete, class: "favoirte_button"} do %> 
                       <i class="fas fa-heart"></i>
+                      <%= recipe.favorites.count %>
                     <% end %> 
-                    <%= recipe.favorites.count %>
                   <% else %> 
-                    <%= link_to recipe_favorites_path(recipe), method: :post do %>
+                    <%= button_to recipe_favorites_path(recipe), {method: :post, class: "favorite_button"} do %>
                       <i class="far fa-heart"></i>
+                      <%= recipe.favorites.count %>
                     <% end %>
-                    <%= recipe.favorites.count %>
                   <% end %>
                 <% end %>
 

@@ -51,6 +51,13 @@ a {
   color: #fff !important;
 }
 
+.top_title{
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+}
+
 .btn {
   padding: 14px 18px;
   border-width: 2px;
@@ -169,6 +176,8 @@ section {
 
 .project img {
   transition: all 0.4s ease;
+  height: 200px;
+  width: 200px;
 }
 
 .project:hover .overlay {

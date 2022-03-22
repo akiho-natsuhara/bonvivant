@@ -1,3 +1,24 @@
 // Place all the styles related to the recipes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.favorite_button{
+    background-color: #fff;
+    border-radius: 0 !important;
+    box-shadow: 0 !important;
+    color: #4a4a4a;
+    max-width: 100%;
+    position: relative;
+    border-style: none !important;
+    border: none !important;
+}
+
+button{
+    background-color: transparent !important;
+    border: none !important;
+    cursor: pointer !important;
+    outline: none !important;
+    padding: 0 !important;
+    appearance: none !important;
+}
+

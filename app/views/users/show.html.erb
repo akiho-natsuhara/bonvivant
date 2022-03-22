@@ -1,13 +1,3 @@
-<section class="hero is-success">
-  <div class="hero-body">
-    <div class="container">
-      <h1 class="title">
-        マイページ
-      </h1>
-    </div>
-  </div>
-</section>
-
 <section class="section">
   <div class="container">
     <div class="columns is-centered">
@@ -55,7 +45,7 @@
         <div class="column is-4">
           <div class="card">
             <div class="card-image">
-              <figure class="image is-4by3">
+              <figure class="users_recipe_image">
                 <%= link_to recipe_path(recipe) do %>
                   <%= image_tag(recipe.image) %>
                 <% end %>
@@ -69,6 +59,21 @@
                       <i class="fas fa-book" aria-hidden="true"></i>
                     </span>
                     このレシピを見る
+                  <% end %>
+                  <% if current_user.following?(@user) %>
+                    <%= link_to user_relationships_path(@user.id), class: "panel-block", method: :delete do %>
+                      <span class="panel-icon">
+                       <i class="fas fa-user" aria-hidden="true"></i>
+                      </span>
+                       フォローを外す
+                    <% end %>
+                  <% else %>
+                    <%= link_to user_relationships_path(@user.id), class: "panel-block", method: :post do %> 
+                      <span class="panel-icon">
+                       <i class="fas fa-user" aria-hidden="true"></i>
+                      </span>
+                       フォローをする
+                    <% end %> 
                   <% end %>
                   <% if @user.id == current_user.id %>
                     <%= link_to edit_recipe_path(recipe), class: "panel-block" do %>
