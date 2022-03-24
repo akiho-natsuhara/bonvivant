@@ -23,6 +23,27 @@
                   <td><%= simple_format @recipe.body %></td>
                 </tr>
               </table>
+              <%= form_for [@recipe, @comment] do |f| %>
+                <%= f.text_area :comment, size: "40x5" %>
+                <%= f.submit '送信', class: "btn-sm btn-primary" %>
+              <% end %>
+              <table>
+                <thead>
+                  <tr>
+                    <th>コメント投稿者</th>
+                    <th>コメント内容</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% @comments.each do |comment| %>
+                    <tr>
+                      <td><%= comment.user.name %></td>
+                      <td><%= comment.comment %></td>
+                      <td><%= link_to "削除", recipe_comment_path(@recipe, comment), method: :delete %></td>
+                    </tr>
+                  <% end %>
+                </tbody>
+              </table>
               <% if current_user.already_favorited?(@recipe) %>
                 <%= button_to  recipe_favorites_path(@recipe), {method: :delete, class: "favoirte_button"} do %> 
                   <i class="fas fa-heart"></i>

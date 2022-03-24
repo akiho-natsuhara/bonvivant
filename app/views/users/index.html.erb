@@ -17,14 +17,34 @@
             <div class="card-content">
               <div class="media">
                 <div class="media-content">
+                  
                   <div class="title"><%=link_to user.name, user_path(user) %></div>
-                  <% if current_user != user %>
+                  <% if current_user.current_user?(user) %>
                     <% if current_user.following?(user) %>
-                      <%= link_to 'フォロー外す', user_relationships_path(user.id), method: :delete, class: "btn btn-primary"%>
-                    <% else %>
-                      <%= link_to 'フォローする', user_relationships_path(user.id), method: :POST , class: "btn btn-primary"%>
+                      <%= button_to user_relationships_path(user.id), class: "panel-block", method: :delete do %>
+                        <span class="panel-icon">
+                        <i class="fas fa-user" aria-hidden="true"></i>
+                        </span>
+                        フォローを外す
+                      <% end %>
+                    <% else %>  
+                      <%= button_to user_relationships_path(user.id), class: "panel-block", method: :post do %> 
+                        <span class="panel-icon">
+                        <i class="fas fa-user" aria-hidden="true"></i>
+                        </span>
+                        フォローをする
+                      <% end %> 
                     <% end %>
                   <% end %>
+                  <% if user.id == current_user.id %>
+                    <%= button_to edit_user_path(user.id), class: "panel-block", method: :get do %>
+                      <span class="panel-icon">
+                       <i class="fas fa-user" aria-hidden="true"></i> 
+                      </span>
+                       編集する
+                    <% end %>
+                  <% end %>
+
                 </div>
               </div>
               <div class="content">

@@ -49,20 +49,26 @@
             <a class="nav-link" href="/recipes/new">New recipe</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/users">My page</a>
+            <a class="nav-link" href="/users">Contributor</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/users/:id">Contributor</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/users/:user_id/followings">Follow</a>
-          </li>
+          <% if user_signed_in? %>
+            <li class="follow">
+              <%= link_to "My page", user_path(current_user) %>
+            </li>
+            <li class="follow">
+              <%= link_to "Followers", user_followings_path(current_user) %>
+            </li>
+          <% end %>
+          <% if user_signed_in? %>
+            <li class="login_button">
+              <%= link_to 'Logout', destroy_user_session_path, method: :delete%>
+            </li>
+          <% else %>
+            <li class="login_button">
+              <%= link_to 'Login' , user_session_path %>
+            </li>
+          <% end %>
         </ul>
-        <% if user_signed_in? %>
-          <%= link_to 'LOGOUT', destroy_user_session_path, method: :delete%>
-        <% else %>
-          <%= link_to 'LOGIN' , user_session_path %>
-        <% end %>
     </div>
   </nav>
     <%= yield %>

@@ -54,35 +54,37 @@
             <div class="card-content">
               <div class="media">
                 <div class="media-content">
-                  <%= link_to recipe_path(recipe), class: "panel-block" do %>
+                  <%= button_to recipe_path(recipe), class: "panel-block", method: :get do %>
                     <span class="panel-icon">
                       <i class="fas fa-book" aria-hidden="true"></i>
                     </span>
                     このレシピを見る
                   <% end %>
-                  <% if current_user.following?(@user) %>
-                    <%= link_to user_relationships_path(@user.id), class: "panel-block", method: :delete do %>
-                      <span class="panel-icon">
-                       <i class="fas fa-user" aria-hidden="true"></i>
-                      </span>
-                       フォローを外す
+                  <% if current_user.current_user?(@user) %>
+                    <% if current_user.following?(@user) %>
+                      <%= button_to user_relationships_path(@user.id), class: "panel-block", method: :delete do %>
+                        <span class="panel-icon">
+                        <i class="fas fa-user" aria-hidden="true"></i>
+                        </span>
+                        フォローを外す
+                      <% end %>
+                    <% else %>
+                      <%= button_to user_relationships_path(@user.id), class: "panel-block", method: :post do %> 
+                        <span class="panel-icon">
+                        <i class="fas fa-user" aria-hidden="true"></i>
+                        </span>
+                        フォローをする
+                      <% end %> 
                     <% end %>
-                  <% else %>
-                    <%= link_to user_relationships_path(@user.id), class: "panel-block", method: :post do %> 
-                      <span class="panel-icon">
-                       <i class="fas fa-user" aria-hidden="true"></i>
-                      </span>
-                       フォローをする
-                    <% end %> 
                   <% end %>
                   <% if @user.id == current_user.id %>
-                    <%= link_to edit_recipe_path(recipe), class: "panel-block" do %>
+                    <%= button_to edit_recipe_path(recipe), class: "panel-block", method: :get do %>
                       <span class="panel-icon">
                         <i class="fas fa-edit"></i>
                       </span>
                       このレシピを編集する
                     <% end %>
-                    <%= link_to recipe_path(recipe), method: :delete, data: {confirm: "削除しますか？"}, class: "panel-block" do %>
+                    <%= button_to recipe_path(recipe), method: :delete, data: {confirm: "削除しますか？"}, class: "panel-block" do %>
                       <span class="panel-icon">
                         <i class="fas fa-trash"></i>
                       </span>

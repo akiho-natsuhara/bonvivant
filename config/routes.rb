@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   
-  get 'relationships/followings'
-  get 'relationships/followers'
+  get 'comments/create'
+  get 'comments/destroy'
   devise_for :users
   root to: "home#index"
 
@@ -17,5 +17,9 @@ Rails.application.routes.draw do
 
   resources :recipes do
     resource :favorites, only: [:create, :destroy]
+  end
+
+  resources :recipes, except: [:index] do
+    resources :comments, only: [:create, :destroy]
   end
 end
