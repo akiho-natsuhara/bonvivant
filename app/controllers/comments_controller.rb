@@ -13,7 +13,7 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    @post = Recipe.find(params[:recipe_id])
+    @recipe = Recipe.find(params[:recipe_id])
     @comment = Comment.find(params[:id])
     @comment.destroy
     redirect_to request.referer
@@ -22,7 +22,7 @@ class CommentsController < ApplicationController
   private
 
   def comment_params
-    params.require(:comment).permit(:comment)
+    params.require(:comment).permit(:comment).merge(user_id: current_user.id, recipe_id: params[:recipe_id])
   end
 end
 

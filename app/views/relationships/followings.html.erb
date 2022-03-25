@@ -20,7 +20,7 @@
                <% end %>
             <% end %>
           </td>
-          <td><%= button_to "このユーザーを見にいく", user %></td>
+          <td><%= button_to "このユーザーを見にいく", user_path(user.id), method: :get, class: "follow_btn" %></td>
         </tr>
       <% end %>
     </tbody>
@@ -28,4 +28,3 @@
 <% else %>
   <p>ユーザーはいません</p>
 <% end %>
-

@@ -39,18 +39,18 @@
                     <tr>
                       <td><%= comment.user.name %></td>
                       <td><%= comment.comment %></td>
-                      <td><%= link_to "削除", recipe_comment_path(@recipe, comment), method: :delete %></td>
+                      <td><%= button_to "削除", recipe_comment_path(@recipe, comment), method: :delete %></td>
                     </tr>
                   <% end %>
                 </tbody>
               </table>
               <% if current_user.already_favorited?(@recipe) %>
-                <%= button_to  recipe_favorites_path(@recipe), {method: :delete, class: "favoirte_button"} do %> 
+                <%= button_to  recipe_favorites_path(@recipe), {method: :delete, class: "favoirte_button"}, remote: true  do %> 
                   <i class="fas fa-heart"></i>
                   <%= @recipe.favorites.count %>
                 <% end %> 
               <% else %> 
-                <%= button_to recipe_favorites_path(@recipe), {method: :post, class: "favorite_button"} do %>
+                <%= button_to recipe_favorites_path(@recipe), {method: :post, class: "favorite_button"}, remote: true do %>
                   <i class="far fa-heart"></i>
                   <%= @recipe.favorites.count %>
                 <% end %>

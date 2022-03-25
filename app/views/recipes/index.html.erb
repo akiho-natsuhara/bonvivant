@@ -13,28 +13,35 @@
             </div>
             <div class="card-content">
               <div class="media">
-                <div class="media-left">
-                  <figure class="recipe_image">
-                    <%= attachment_image_tag recipe.user, :profile_image, fallback: "no.image.png", class: "profile_image" %>
-                  </figure>
-                </div>
                 <div class="media-content">
-                  <div class="title"><%=link_to recipe.user.name, user_path(recipe.user) %></div>
+                  <div class="title">
+                    <%= link_to recipe.title, recipe_path(recipe) %>
+                  </div>
                 </div>
               </div>
-                <% if user_signed_in? %>
-                  <% if current_user.already_favorited?(recipe) %>
-                    <%= button_to  recipe_favorites_path(recipe), {method: :delete, class: "favoirte_button"} do %> 
-                      <i class="fas fa-heart"></i>
-                      <%= recipe.favorites.count %>
-                    <% end %> 
-                  <% else %> 
-                    <%= button_to recipe_favorites_path(recipe), {method: :post, class: "favorite_button"} do %>
-                      <i class="far fa-heart"></i>
-                      <%= recipe.favorites.count %>
-                    <% end %>
+              <div class="media">
+                <div class="media-content">
+                  <div class="media-left">
+                    <figure class="recipe_image">
+                      <%= attachment_image_tag recipe.user, :profile_image, fallback: "no.image.png", class: "profile_image" %>
+                    </figure>
+                    <div class="recipe_title"><%=link_to recipe.user.name, user_path(recipe.user) %></div>
+                  </div>
+                </div>
+              </div>
+              <% if user_signed_in? %>
+                <% if current_user.already_favorited?(recipe) %>
+                  <%= button_to  recipe_favorites_path(recipe), {method: :delete, class: "favoirte_button"} do %> 
+                    <i class="fas fa-heart"></i>
+                    <%= recipe.favorites.count %>
+                  <% end %> 
+                <% else %> 
+                  <%= button_to recipe_favorites_path(recipe), {method: :post, class: "favorite_button"} do %>
+                    <i class="far fa-heart"></i>
+                    <%= recipe.favorites.count %>
                   <% end %>
                 <% end %>
+              <% end %>
 
               <div class="content">
                 <time><%= recipe.updated_at.strftime("%Y-%m-%d %H:%M") %></time>更新

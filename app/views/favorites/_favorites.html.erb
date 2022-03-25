@@ -1,0 +1,11 @@
+<% if current_user.already_favorited?(@recipe) %>
+    <%= button_to  recipe_favorites_path(@recipe), {method: :delete, class: "favoirte_button"}, remote: true  do %> 
+        <i class="fas fa-heart"></i>
+        <%= @recipe.favorites.count %>
+    <% end %> 
+    <% else %> 
+    <%= button_to recipe_favorites_path(@recipe), {method: :post, class: "favorite_button"}, remote: true do %>
+        <i class="far fa-heart"></i>
+        <%= @recipe.favorites.count %>
+    <% end %>
+<% end %>

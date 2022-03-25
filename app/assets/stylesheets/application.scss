@@ -79,9 +79,29 @@
 }
 
 .follow_btn {
-  color: orange;
+  color: beige;
+  background-color: rgb(0, 217, 255);
+  border-radius: 5%;
+  
 }
 
+td {
+  padding-top: 10px !important;
+}
+
+.recipe_title a {
+  color: black !important;
+  font-size: 20px;
+  margin: 0 0 20px 0 !important;
+}
+
+.recipe_title {
+  margin: 0 0 20px 0 !important;
+}
+
+ .title a {
+  color: rgb(223, 129, 21) !important;
+}
 :root {
   --primary: orange;
   --dark: #21252f;
@@ -170,7 +190,7 @@ a {
 }
 
 .hero {
-  background-image: url("sample1.jpg");
+  background-image: url("foodsample.jpeg");
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
@@ -312,9 +332,6 @@ section {
   background-color: var(--primary);
   border: 2px solid var(--primary);
   color: #fff;
-  /* iのアイコンをaの中で中央揃えしてるみたい。
-  １つの要素に対して中央に寄せるときに親要素に
-  flexを付ける場合もある。 */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -352,3 +369,8 @@ form .form-control {
   color: #fff;
 }
 
+
+table tr{
+  border-bottom: solid 2px #eee;
+  cursor: pointer;
+}

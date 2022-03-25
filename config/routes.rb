@@ -17,9 +17,7 @@ Rails.application.routes.draw do
 
   resources :recipes do
     resource :favorites, only: [:create, :destroy]
-  end
-
-  resources :recipes, except: [:index] do
     resources :comments, only: [:create, :destroy]
   end
+
 end
