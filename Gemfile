@@ -60,3 +60,4 @@ gem "dotenv-rails"
 gem 'pry-rails'
 gem "bootstrap", '~> 5.1.3'
 gem "jquery-rails"
+gem "bulma-rails"
