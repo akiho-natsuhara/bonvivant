@@ -28,9 +28,19 @@ gem 'jbuilder', '~> 2.7'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
+gem 'devise'
+gem "refile", require: "refile/rails", github: 'manfe/refile'
+gem "refile-mini_magick"
+gem "dotenv-rails"
+gem 'pry-rails'
+gem "bootstrap", '~> 5.1.3'
+gem "jquery-rails"
+gem "bulma-rails"
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'rails-erd'
 end
 
 group :development do
@@ -53,11 +63,3 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-gem 'devise'
-gem "refile", require: "refile/rails", github: 'manfe/refile'
-gem "refile-mini_magick"
-gem "dotenv-rails"
-gem 'pry-rails'
-gem "bootstrap", '~> 5.1.3'
-gem "jquery-rails"
-gem "bulma-rails"
