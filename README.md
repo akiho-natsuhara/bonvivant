@@ -30,8 +30,13 @@ password :sample1234 <br><br>
 # アプリケーションを作成した背景
 ### 職場の後輩や友人、特に一人暮らしをする若者の自炊するときにメニューを考えることが大変という課題があることに気づきました。<br>
 ### そこで自分が考えたレシピやおすすめの食べ方などを投稿できるようにして、他ユーザーからコメントやいいねをもらうことでモチベーションの向上に繋がるようにしました。また、他ユーザーのレシピも見れることから、交流ができたり参考にする事ができます。
+<br><br>
 
 # ER図
 
 <img width="1240" alt="3d0f61989ec2a62b9a3ec51a6ab7157d" src="https://user-images.githubusercontent.com/98442010/161199163-78bc50df-7bdd-4c5c-9dd9-1a9853be8318.png">
+<br><br>
 
+
+# 開発環境
+### HTML/CSS, Javascript, Ruby, Ruby on Rails, Github, Mysql
