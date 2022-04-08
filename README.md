@@ -9,7 +9,7 @@ password :sample1234 <br><br>
 
 [![Image from Gyazo](https://i.gyazo.com/98f6bed7e37c4552568ee2789eda3656.png)](https://gyazo.com/98f6bed7e37c4552568ee2789eda3656)
 
-<a href="https://gyazo.com/a34b793ff42c5a5f27517d6b98d1ed35"><img src="https://i.gyazo.com/a34b793ff42c5a5f27517d6b98d1ed35.gif" alt="Image from Gyazo" width="1000"/></a>
+[![Image from Gyazo](https://i.gyazo.com/a34b793ff42c5a5f27517d6b98d1ed35.gif)](https://gyazo.com/a34b793ff42c5a5f27517d6b98d1ed35)
 
 # アプリケーションを作成した背景
 #### 職場の後輩や友人、特に一人暮らしをする若者の自炊するときにメニューを考えることが大変という課題があることに気づきました。<br>
