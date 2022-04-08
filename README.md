@@ -85,4 +85,3 @@ VSCode
 また、検索機能を作りレシピを探せるようにしていきます。<br>
 食材の成分表のAPIを自分で作成して取り入れられるようにします。<br>
 フロントにモダンな技術をして行けるように、新しい言語の学習に挑戦します。
-<a href="https://gyazo.com/a34b793ff42c5a5f27517d6b98d1ed35"><img src="https://i.gyazo.com/a34b793ff42c5a5f27517d6b98d1ed35.gif" alt="Image from Gyazo" width="1000"/></a>
